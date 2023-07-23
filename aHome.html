@@ -19,7 +19,7 @@
   <body>
     <a-scene>
       <!-- 75 10 13 -->
-      <a-entity id="cameraWrapper" position="180.730 250 27.659">
+      <a-entity id="cameraWrapper" position="180.730 0 27.659">
         <a-camera id="camera" user-height="1.8"><a-cursor></a-cursor></a-camera>
       </a-entity>
 
@@ -70,7 +70,7 @@
         rotation="-90 0 0"
         width="500"
         height="500"
-        material="src: #ground; repeat:50 50; transparent: true; opacity: 0.8"
+        material="src: #ground; repeat:50 50; transparent: true; opacity: 0.95"
         shadow="cast: false; receive: true"
         scale="1 1 1"
       ></a-plane>
@@ -90,6 +90,7 @@
         <a-entity position="118.220 0 151.699" gltf-model="#rd" scale="1 1 1" rotation="0 1.6 0"></a-entity>
         <a-entity position="118.220 0 151.699" gltf-model="#sw" scale="1 1 1" rotation="0 1.6 0"></a-entity>
         <a-entity
+          showInfo="itemName: 博物館; height:"
           position="116.579 0 150.94"
           gltf-model="#bxg"
           scale="1 1 1"
@@ -172,7 +173,7 @@
 
       <!-- BORDER: (2544350, 169850) => (2544050, 170100) ,  T22(2544322.341, 170030.725) -->
       <!-- Transform to aframe local coordinate ==> BORDER: (0, 0, 0) => (250, 0, 300) ,  T22'(180.730, 0, 27.659) -->
-      <a-cylinder
+      <!-- <a-cylinder
         showinfo
         position="-50 0 -50"
         radius="0.25"
@@ -199,14 +200,14 @@
         radius="0.25"
         height="100"
         color="#FFC65D"
-      ></a-cylinder>
+      ></a-cylinder> -->
     </a-scene>
 
     <div
       style="
         position: absolute;
         right: 5em;
-        bottom: 0em;
+        bottom: 2em;
         width: 10em;
         height: 10em;
         padding: 0;
@@ -276,9 +277,9 @@
             <!-- Modal body -->
             <div class="modal-body">
               Choose a location...
-
-
-
+              <div id="clickme" style="cursor: pointer;">
+                <img src="./images/VirtualWebMap.png" width="450px">
+              </div>
             </div>
 
             <!-- Modal footer -->

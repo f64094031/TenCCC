@@ -48,6 +48,17 @@ let jumpInterval = null;
 let downInterval = null;
 
 window.onload = () => {
+  document.getElementById('clickme').onclick = function(e) {
+    // e = Mouse click event.
+    let rect = e.target.getBoundingClientRect();
+    let x = e.clientX - rect.left; //x position within the element.
+    let y = e.clientY - rect.top;  //y position within the element.
+    let ax = -50+y*7/9 -180.730 ;
+    let az = 350-x*7/9-50 - 27.659;
+    console.log(x, ax)
+    const cam = document.querySelector("#camera");
+    cam.setAttribute("position", `${ax} ${cam.getAttribute("position").y} ${az}`);
+  }
   AFRAME.registerComponent("resize", {
     schema: {
       axis: {
@@ -455,6 +466,6 @@ function readJsonFile(file) {
     }
   }
   rawFile.send(null);
-  console.log(obj);
+  // console.log(obj);
   return obj;
 }
